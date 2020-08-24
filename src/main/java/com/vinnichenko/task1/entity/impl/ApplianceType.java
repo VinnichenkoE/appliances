@@ -1,6 +1,6 @@
-package com.vinnichenko.task1.creator;
+package com.vinnichenko.task1.entity.impl;
 
-public enum ApplianceName {
+public enum ApplianceType {
 
     OVEN("Oven"),
     LAPTOP("Laptop"),
@@ -11,12 +11,12 @@ public enum ApplianceName {
 
     private String name;
 
-    public String getName() {
-        return name;
+    ApplianceType(String name) {
+        this.name = name;
     }
 
-    ApplianceName(String name) {
-        this.name = name;
+    public String getName() {
+        return name;
     }
 
 

@@ -9,15 +9,15 @@ import java.io.IOException;
 import java.util.List;
 
 public interface ApplianceDAO {
-	List<Appliance> find(Criteria criteria) throws DaoException;
+    List<Appliance> find(Criteria criteria) throws DaoException;
 
-	default void closeBufferReader(BufferedReader bufferedReader) {
-		if (bufferedReader != null) {
-			try {
-				bufferedReader.close();
-			} catch (IOException e) {
-				System.out.println("can't close bufferedReader" + e.getMessage());
-			}
-		}
-	}
+    default void closeBufferReader(BufferedReader bufferedReader) throws DaoException {
+        if (bufferedReader != null) {
+            try {
+                bufferedReader.close();
+            } catch (IOException e) {
+                throw new DaoException(e);
+            }
+        }
+    }
 }
