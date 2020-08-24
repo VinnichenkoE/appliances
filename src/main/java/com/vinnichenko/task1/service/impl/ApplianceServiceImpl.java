@@ -9,7 +9,6 @@ import com.vinnichenko.task1.exception.ServiceException;
 import com.vinnichenko.task1.service.ApplianceService;
 import com.vinnichenko.task1.service.validator.Validator;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class ApplianceServiceImpl implements ApplianceService {
@@ -22,7 +21,7 @@ public class ApplianceServiceImpl implements ApplianceService {
 		}
 		DAOFactory factory = DAOFactory.getInstance();
 		ApplianceDAO dao = factory.getApplianceDAO();
-		List<Appliance> appliances = new ArrayList<>();
+		List<Appliance> appliances;
 		try {
 			appliances = dao.find(criteria);
 		} catch (DaoException ex) {
