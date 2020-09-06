@@ -11,7 +11,8 @@ import java.util.List;
 public interface ApplianceDAO {
     List<Appliance> find(Criteria criteria) throws DaoException;
 
-    default void closeBufferReader(BufferedReader bufferedReader) throws DaoException {
+    default void closeBufferReader(BufferedReader bufferedReader)
+            throws DaoException {
         if (bufferedReader != null) {
             try {
                 bufferedReader.close();
